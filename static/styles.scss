@@ -1,0 +1,148 @@
+// Google Fonts
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap");
+
+$primary: #ff6b00;
+$accent: #ffffff;
+$bg: #1f1f1f;
+$card-bg: #2e2e2e;
+$light-gray: #f0f0f0;
+$danger: #ff4c4c;
+
+body {
+  font-family: "Inter", sans-serif;
+  background-color: $bg;
+  color: $accent;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 3rem;
+}
+
+.content {
+  background: $card-bg;
+  border-radius: 1rem;
+  padding: 2rem;
+  width: 100%;
+  max-width: 700px;
+  box-shadow: 0 0 30px rgba(255, 107, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: 0.3s ease;
+}
+
+h1 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: $accent;
+}
+
+form {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+input[type="text"] {
+  flex: 1;
+  padding: 0.9rem 1.2rem;
+  background: $light-gray;
+  border: none;
+  border-radius: 0.6rem;
+  font-size: 1rem;
+  color: #000;
+
+  &::placeholder {
+    color: #999;
+  }
+
+  &:focus {
+    outline: 2px solid $primary;
+  }
+}
+
+input[type="submit"] {
+  background: $primary;
+  color: white;
+  border: none;
+  padding: 0.9rem 1.5rem;
+  border-radius: 0.6rem;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s ease;
+
+  &:hover {
+    background: lighten($primary, 5%);
+    box-shadow: 0 0 12px rgba(255, 107, 0, 0.5);
+  }
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1.5rem;
+  font-size: 0.95rem;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+th,
+td {
+  padding: 1rem;
+  text-align: left;
+  background: rgba(255, 255, 255, 0.03);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+th {
+  color: lighten($accent, 20%);
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+}
+
+tr:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+  transition: background 0.3s ease;
+}
+
+a {
+  color: $primary;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: lighten($primary, 10%);
+  }
+
+  &.delete {
+    color: $danger;
+
+    &:hover {
+      color: lighten($danger, 10%);
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .content {
+    padding: 1.5rem;
+  }
+
+  form {
+    flex-direction: column;
+  }
+
+  input[type="submit"] {
+    width: 100%;
+  }
+
+  table,
+  th,
+  td {
+    font-size: 0.85rem;
+  }
+}
